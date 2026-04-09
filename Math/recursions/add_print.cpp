@@ -44,6 +44,19 @@ void sum1(int n, int sum2){
     }
     sum1(n-1,sum2+n);
 }
+int sumfunctional(int n){
+    if (n==0){
+        return 0;
+    }
+    return (n + sumfunctional(n-1));
+}
+int multi(int n){
+    if (n==1){
+        return 1;
+    }
+    return (n*multi(n-1));
+}
+
 int main(){
     int n;
     cin>>n;
