@@ -17,6 +17,7 @@ int main() {
         //precompute
         mpp[a[i]]++;
     }
+  // just revised little bit
     int maxi = 0;
     int mini = INT_MAX;
     int max_ele ,min_ele;
