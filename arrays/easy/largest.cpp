@@ -2,10 +2,14 @@
 using namespace std;
 
 //brute force method is sorting using quick_sort
+// TC : O(Nlog(N))
+// SC : O(1)
 //and calling arr[n-1] since its the largest
 
+//Optimal approach
+//TC:O(N)
+//SC:O(1)
 int largest(int arr[], int n){
-    //optimal approach
     int largest = arr[0];
     for (int i = 0; i < n; i++){
         if (arr[i]>largest){
