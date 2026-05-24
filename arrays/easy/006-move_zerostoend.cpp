@@ -1,4 +1,7 @@
 class Solution {
+//ki: pick non zeros and store in another array 
+//TC:O(2n)
+//SC:O(n)
 //bruteforce
 public:
     void moveZeroes(vector<int>& nums) {
@@ -23,6 +26,10 @@ public:
 };
 
 //optimal method
+//two pointer approach, finding the first zero in the array and storing that index and then running a loop from that index to the rest of the array checking for 
+//non zeros and swapping with the index!
+//TC: O(N)
+//SC:O(1)
 void moveZeroes(vector<int>& nums) {
     int n = nums.size();
     int j = -1;
