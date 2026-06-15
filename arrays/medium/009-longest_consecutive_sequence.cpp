@@ -7,6 +7,9 @@ bool ls(vector<int> nums , int x){
     }
     return false;
 }
+// tc: O(n2)
+// sc: O(1)
+// iterate thru every element and check
 int brute(vector<int> nums){
     int n = nums.size();
     int cnt = 0;
@@ -21,6 +24,8 @@ int brute(vector<int> nums){
     return cnt;
 }
 
+// tc: O(n + nlogn)
+//sc:(n) because we are changing the given array
 int better(vector<int> nums){
     int n = nums.size();
     int cntCur = 0, leasSmaller = INT_MIN, longest = 1;
@@ -39,6 +44,10 @@ int better(vector<int> nums){
     return longest;
 }
 
+//tc:O(3n)
+//sc:O(1)
+// first store every element in the set and then iterate in the set make an elemtn as start and if there doesnt exist any element before start then iterat thru the set and check
+// if the next elemeent exist if exist cnt++
 int optimal(vector<int> nums){
     int n = nums.size();
     int longest = 1;
