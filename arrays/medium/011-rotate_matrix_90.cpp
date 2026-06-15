@@ -1,17 +1,23 @@
     #include <bits/stdc++.h>
     using namespace std;
 
+    // tc: O(n^2)
+    // sc: O(n^2)
+    // see the indexes and find out what is changing either rows or columns
     vector<vector<int>> brute(vector<vector<int>> matrix){
         int n = matrix.size();
         vector<vector<int>> newm(n,vector<int>(n));
         for (int i = 0; i < n; i++){
             for (int j = 0; j < n; j++){
-                newm[i][n-j-1] = matrix[j][i];
+                newm[i][j] = matrix[n-j-1][i];
             }
         }
         return newm;
     }
 
+    //tc: o (2*n^2)
+    //sc : o(1)
+    // first transpose the matrix and then reverse each row
     vector<vector<int>> optimal(vector<vector<int>> matrix){
         int n = matrix.size();
         for (int i = 0; i < n; i++){
