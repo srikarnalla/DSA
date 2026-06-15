@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// tc : O(n*m)
+// sc : O(n*m)
+// we have four pointers that is left right bottom and top and we iterate from left to right then top to bottom then right to left and then bottom to top
+// by doing this we are covering all the elements in the spiral way and then we will end when top >= bottom and left >= right this is the point where the spira actually ends
+// edge case is when gng from bottom to top check if top is less than bottom only then perform or else the pointer will go to a non existent index and similarly for the left and right
 vector<int> func(vector<vector<int>> mat){
     int m = mat.size();
     int n = mat[0].size();
