@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// sc:o(2*nm)
+// tc:o(n+m)
+// use extra space that is a row and a column whenever the element is zero, mark that row as 0 and column as 0
 void better(vector<vector<int>>& matrix){
     int m = matrix.size();
     int n = matrix[0].size();
@@ -23,6 +26,12 @@ void better(vector<vector<int>>& matrix){
     }
 }
 
+// sc:O(1)
+// tc:O(2*nm)
+// we are using the first row and the column as the extra indeices we used in the better solution whenever the elemnt is zero we store that index in the first row and column
+// and we use just one extra space because mat[0][0] is common in both hence we take the extra index and use it for the row 
+// then we first check the inner matrix leaving the first row and column and mark them 0 where the row and index was marked zero frst then we will make the first column zero if mat[0][0]
+// is zero then we iterate the first row and make em zero if index = 0
 void optimal(vector<vector<int>>& mat){
     int m = mat.size();
     int n = mat[0].size();
