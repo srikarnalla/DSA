@@ -19,13 +19,14 @@ int brute(vector<int> nums){
         while (ls(nums,x+1) == true){
             x = x + 1;
             cnt++;
-        }
+        
     }
     return cnt;
 }
 
 // tc: O(n + nlogn)
 //sc:(n) because we are changing the given array
+
 int better(vector<int> nums){
     int n = nums.size();
     int cntCur = 0, leasSmaller = INT_MIN, longest = 1;
