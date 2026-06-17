@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//tc: O(N)
+//sc: O(1)
+// iterate thru the loop take cost and subtract with mini with each array elements and then check max of cost and profit and update the max and then 
+// checm mini and update it
 int func(vector<int> nums){
     int n = nums.size();
     int profit = 0;
