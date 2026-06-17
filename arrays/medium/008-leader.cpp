@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//tc:O(N^2)
+//sc:O(N)
+// iterate thru two loops
 vector<int> brute(vector<int> nums){
     int n = nums.size();
     vector<int> add;
@@ -19,6 +22,9 @@ vector<int> brute(vector<int> nums){
     return add;
 }
 
+//tc:O(N)
+//sc:O(N)
+// the last index element is the leader and then the elements to the left whichever are greater than this element will be the next leader
 vector<int> optimal(vector<int> nums){
     int n = nums.size();
     vector<int> add;
