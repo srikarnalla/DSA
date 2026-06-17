@@ -2,6 +2,10 @@
 using namespace std;
 
 vector<int> brute(vector<int> nums){
+    // tc:O(2N)
+    // sc:O(N)
+    // divide and conquer rule here make two vectors where one contains the positives and the other contains the negatives and then add them back into the 
+    // original array!
     int n = nums.size();
     vector<int> positive;
     vector<int> negative;
@@ -21,6 +25,10 @@ vector<int> brute(vector<int> nums){
 }
 
 vector<int> optimal(vector<int> nums){
+    //tc:O(N)
+    //sc:O(N)
+    // here make a temp vector and then if the element is negative add it in the odd place of the temp array and similarly if the element is positive add 
+    // it in the even position and then move the indices by 2 steps to again go to the next even and odd indices!
     int n = nums.size();
     int nes = 1, pos = 0;
     vector<int> temp(n);
@@ -37,7 +45,13 @@ vector<int> optimal(vector<int> nums){
     return temp;
 }
 
+// we use this only when there are more number of positives than negatives or more negatives than positives.
 vector<int> brute_variant_2(vector<int> nums){
+    // there are N elements and say m are max of positivies and negatives, and then n as the leftover where m+n = N
+    // tc: O(N + m + n) = O(2*N)
+    // sc: O(N)
+    // similar to brute force seeprate the positives and negatives and then add the positives and negatives and then add the leftover 
+    // there are two cases when more positives and when there are more negatives!
     int n = nums.size();
     vector<int> nes, pos;
     for (int i  = 0; i < n; i++){
